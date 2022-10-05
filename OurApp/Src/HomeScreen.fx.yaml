@@ -1,0 +1,78 @@
+HomeScreen As screen:
+    Fill: =RGBA(234, 234, 234, 1)
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+
+    btnLKPS As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(164, 38, 44, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =200
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        OnSelect: =Navigate('ScreenDaftarAkreditasi_1-4',ScreenTransition.Cover)
+        Size: =24
+        Text: ="ISI LKPS"
+        Width: =280
+        X: =35
+        Y: =278
+        ZIndex: =1
+
+    btnPenilaian As button:
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        DisabledFill: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(164, 38, 44, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =200
+        HoverColor: =RGBA(255, 255, 255, 1)
+        HoverFill: =ColorFade(RGBA(164, 38, 44, 1), -20%)
+        OnSelect: =Navigate('ScreenDaftarPenilaian_1-4',ScreenTransition.Cover)
+        Size: =24
+        Text: ="PENILAIAN"
+        Width: =280
+        X: =335
+        Y: =278
+        ZIndex: =2
+
+    Label1 As label:
+        Align: =Align.Center
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Fill: =RGBA(164, 38, 44, 1)
+        Font: =Font.'Lato Black'
+        FontWeight: =FontWeight.Bold
+        Height: =66
+        Size: =30
+        Text: =""
+        Width: =640
+        Y: =8
+        ZIndex: =3
+
+    Label3 As label:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        FontWeight: =Bold
+        Height: =70
+        Size: =21
+        Text: ="Hello," & User().FullName
+        Width: =388
+        X: =252
+        Y: =6
+        ZIndex: =4
+
+    Icon3_1 As icon.Leave:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Fill: =RGBA(247, 247, 247, 1)
+        Icon: =Icon.Leave
+        OnSelect: =Navigate(FormLogin,Fade)
+        X: =1
+        Y: =12
+        ZIndex: =5
+

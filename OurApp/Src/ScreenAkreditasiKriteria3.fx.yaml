@@ -1,0 +1,203 @@
+"ScreenAkreditasiKriteria3 As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    Fill: =RGBA(234, 234, 234, 1)
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+
+    RectQuickActionBar5_3 As rectangle:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Fill: =RGBA(164, 38, 44, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName5_4 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Height: =88
+        Size: =27
+        Text: ="MAHASISWA"
+        Width: =Parent.Width
+        ZIndex: =2
+
+    "GalleryMenuLKPS_5 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Height: =1048
+        Items: |-
+            =Table(
+                {
+                    Menu: "Tabel Jmlh Calon Maba",
+                    SubMenu: "",
+                    TargetScreen: ScreenAkreditasiKriteria1,
+                    Thumbnail: Tabel_Daftar_Dosen_Tetap_Mengampu_MataKuliah
+                },
+             {
+                    Menu: "Tabel Layanan & Kualitas Layanan",
+                    SubMenu: "",
+                    TargetScreen: ScreenAkreditasiKriteria2,
+                    Thumbnail: Tabel_Layanan_dan_Kualitas_Layanan_Kepada_Mahasiswa
+                },
+                {
+                    Menu: "Tabel Kg Mhs Sesuai Bid Infokom",
+                    SubMenu: "",
+                    TargetScreen: ScreenAkreditasiKriteria3,
+                    Thumbnail: 'Tabel_Jumlah _Mahasiswa_Baru'
+                },
+                {
+                    Menu: "Tabel Kg Mhs tidak Sesuai Bid Infokom",
+                    SubMenu: "",
+                    TargetScreen: ScreenAkreditasiKriteria3,
+                    Thumbnail: 'Tabel_Jumlah _Mahasiswa_Baru'
+                } 
+            )
+        Layout: =Layout.Vertical
+        OnSelect: |-
+            =If(
+                ThisItem.Menu = "LKPS KRITERIA 5 - 6",
+             Launch("https://apps.powerapps.com/play/a2fb32bc-24db-40ff-992b-103849979c3f?tenantId=7b388d18-1900-418c-a5d3-e28d7a9a38e6"),
+                If(
+                    ThisItem.Menu = "LKPS KRITERIA 7 - 9",
+                    Launch("https://apps.powerapps.com/play/fb6f534e-cc8d-4cdf-9e1f-5d160792721d?tenantId=7b388d18-1900-418c-a5d3-e28d7a9a38e6")
+                )
+            )
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Y: =88
+        ZIndex: =3
+
+        Image1_5 As image:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =128
+            Image: ='IT_PLN-removebg-preview'
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title2_5 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.Menu
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image1_5.Width - 104
+            X: =Image1_5.X + Image1_5.Width + 24
+            Y: =44
+            ZIndex: =2
+
+        Subtitle2_4 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.SubMenu
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title2_5.Width
+            X: =Title2_5.X
+            Y: =Title2_5.Y + Title2_5.Height + 4
+            ZIndex: =3
+
+        NextArrow2_5 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(89, 0, 0, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate(BS_CalonMaba,ScreenTransition.Cover)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator2_5 As rectangle:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Fill: =RGBA(89, 0, 0, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    Icon1_6 As icon.ChevronRight:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =39
+        Icon: =Icon.ChevronRight
+        OnSelect: =Navigate(BS_Layanan,Fade)
+        Width: =38
+        X: =585
+        Y: =309
+        ZIndex: =4
+
+    Icon1_7 As icon.ChevronRight:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =39
+        Icon: =Icon.ChevronRight
+        OnSelect: =Navigate(BS_KegiatanMHSSesuai,Fade)
+        Width: =38
+        X: =587
+        Y: =469
+        ZIndex: =5
+
+    Icon1_8 As icon.ChevronRight:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =39
+        Icon: =Icon.ChevronRight
+        OnSelect: =Navigate(BS_KegiatanMHSTidakSesuai,Fade)
+        Width: =38
+        X: =587
+        Y: =627
+        ZIndex: =6
+
+    Ico_DaftarLKPS_3 As icon.BackArrow:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate('ScreenDaftarAkreditasi_1-4')
+        X: =18
+        Y: =1051
+        ZIndex: =7
+
+    Icon2_2 As icon.Home:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Icon: =Icon.Home
+        OnSelect: =Navigate(HomeScreen,Fade)
+        X: =276
+        Y: =1051
+        ZIndex: =8
+

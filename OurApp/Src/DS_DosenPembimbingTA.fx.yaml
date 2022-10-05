@@ -1,0 +1,445 @@
+"DS_DosenPembimbingTA As screen.'phoneDetailViewLayout_ver3.0'":
+    Fill: =RGBA(234, 234, 234, 1)
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+
+    RectQuickActionBar2_13 As rectangle:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Fill: =RGBA(164, 38, 44, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    IconBackarrow1_13 As icon.ChevronLeft:
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =88
+        Icon: =Icon.ChevronLeft
+        OnSelect: =Navigate(BS_DosemPembimbingTA, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        PressedFill: =RGBA(255, 255, 255, 0.3)
+        TabIndex: =0
+        Tooltip: ="Back to list"
+        Width: =88
+        ZIndex: =2
+
+    IconEdit1_13 As icon.Edit:
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(DataSourceInfo([@Tabel_Kerjasama_Pendidikan], DataSourceInfo.EditPermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Edit
+        OnSelect: =EditForm(EditForm1_13);Navigate(ES_DosenPembimbingTA, ScreenTransition.None)
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        PressedFill: =RGBA(255, 255, 255, 0.3)
+        TabIndex: =0
+        Tooltip: ="Edit this item"
+        Width: =88
+        X: =Parent.Width - Self.Width
+        ZIndex: =3
+
+    IconDelete1_13 As icon.Trash:
+        AccessibleLabel: =Self.Tooltip
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        DisplayMode: =If(!IsBlank(BrowseGallery1.Selected) && DataSourceInfo([@Tabel_Kerjasama_Pendidikan], DataSourceInfo.DeletePermission), DisplayMode.Edit, DisplayMode.Disabled)
+        Height: =88
+        Icon: =Icon.Trash
+        OnSelect: =Remove([@Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir], BrowseGallery1_11.Selected); If (IsEmpty(Errors([@Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir], BrowseGallery1_11.Selected)), Back())
+        PaddingBottom: =24
+        PaddingLeft: =24
+        PaddingRight: =24
+        PaddingTop: =24
+        PressedFill: =RGBA(255, 255, 255, 0.3)
+        TabIndex: =0
+        Tooltip: ="Delete this item"
+        Width: =88
+        X: =Parent.Width - IconEdit1_13.Width - Self.Width
+        ZIndex: =4
+
+    LblAppName2_13 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Height: =88
+        Size: =27
+        Text: ="Tabel 4.3. Daftar Dosen Menjadi Pembimbing TA"
+        Width: =Parent.Width - Self.X - IconDelete1_13.Width - IconEdit1_13.Width
+        Wrap: =false
+        X: =80
+        ZIndex: =5
+
+    DetailForm1_13 As formViewer:
+        AcceptsFocus: =false
+        BorderColor: =RGBA(89, 0, 0, 1)
+        DataSource: =Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir
+        Height: =Parent.Height - DetailForm1_13.Y
+        Item: =BrowseGallery1_11.Selected
+        Width: =Parent.Width
+        Y: =RectQuickActionBar2_13.Y + RectQuickActionBar2_13.Height
+        ZIndex: =6
+
+        Title_DataCard25 As typedDataCard.textualViewCard:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="Title"
+            Default: =ThisItem.Title
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir],DataSourceInfo.DisplayName,"Title")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =true
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+            DataCardKey191 As label:
+                AutoHeight: =true
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue191 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey191.Y + DataCardKey191.Height + 5
+                ZIndex: =2
+
+        "'Nama Dosen_DataCard3' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(89, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="NamaDosen"
+            Default: =ThisItem.'Nama Dosen'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir],DataSourceInfo.DisplayName,"NamaDosen")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =7
+
+            DataCardKey192 As label:
+                AutoHeight: =true
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue192 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey192.Y + DataCardKey192.Height + 5
+                ZIndex: =2
+
+        "'Jumlah Mhs. Dibimbing Pada PS DIakreditasi (TS-2)_DataCard1' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(89, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="JumlahMhs_x002e_DibimbingPadaPSD"
+            Default: =ThisItem.'Jumlah Mhs. Dibimbing Pada PS DIakreditasi (TS-2)'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir],DataSourceInfo.DisplayName,"JumlahMhs_x002e_DibimbingPadaPSD")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =7
+
+            DataCardKey193 As label:
+                AutoHeight: =true
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue193 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey193.Y + DataCardKey193.Height + 5
+                ZIndex: =2
+
+        "'Jumlah Mhs. Dibimbing Pada PS DIakreditasi (TS-1)_DataCard1' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(89, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="JumlahMhs_x002e_DibimbingPadaPSD0"
+            Default: =ThisItem.'Jumlah Mhs. Dibimbing Pada PS DIakreditasi (TS-1)'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir],DataSourceInfo.DisplayName,"JumlahMhs_x002e_DibimbingPadaPSD0")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =7
+
+            DataCardKey194 As label:
+                AutoHeight: =true
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue194 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey194.Y + DataCardKey194.Height + 5
+                ZIndex: =2
+
+        "'Jumlah Mhs. Dibimbing Pada PS DIakreditasi (TS)_DataCard1' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(89, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="JumlahMhs_x002e_DibimbingPadaPSD1"
+            Default: =ThisItem.'Jumlah Mhs. Dibimbing Pada PS DIakreditasi (TS)'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir],DataSourceInfo.DisplayName,"JumlahMhs_x002e_DibimbingPadaPSD1")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =7
+
+            DataCardKey195 As label:
+                AutoHeight: =true
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue195 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey195.Y + DataCardKey195.Height + 5
+                ZIndex: =2
+
+        "'Jumlah Mhs. Dibimbing Pada PS DIakreditasi (Rata-Rata)_DataCard1' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(89, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="JumlahMhs_x002e_DibimbingPadaPSD2"
+            Default: =ThisItem.'Jumlah Mhs. Dibimbing Pada PS DIakreditasi (Rata-Rata)'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir],DataSourceInfo.DisplayName,"JumlahMhs_x002e_DibimbingPadaPSD2")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =5
+            ZIndex: =7
+
+            DataCardKey196 As label:
+                AutoHeight: =true
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue196 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey196.Y + DataCardKey196.Height + 5
+                ZIndex: =2
+
+        "'Jumlah Mhs. Dibimbing Pada PS Lain di PT (TS-2) _DataCard1' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(89, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="JumlahMhs_x002e_DibimbingPadaPSL"
+            Default: =ThisItem.'Jumlah Mhs. Dibimbing Pada PS Lain di PT (TS-2) '
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir],DataSourceInfo.DisplayName,"JumlahMhs_x002e_DibimbingPadaPSL")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =6
+            ZIndex: =7
+
+            DataCardKey197 As label:
+                AutoHeight: =true
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue197 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey197.Y + DataCardKey197.Height + 5
+                ZIndex: =2
+
+        "'Jumlah Mhs. Dibimbing Pada PS Lain di PT (TS-1)_DataCard1' As typedDataCard.textualViewCard":
+            BorderColor: =RGBA(89, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="JumlahMhs_x002e_DibimbingPadaPSL0"
+            Default: =ThisItem.'Jumlah Mhs. Dibimbing Pada PS Lain di PT (TS-1)'
+            DisplayMode: =DisplayMode.View
+            DisplayName: =DataSourceInfo([@Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir],DataSourceInfo.DisplayName,"JumlahMhs_x002e_DibimbingPadaPSL0")
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =40
+            Required: =false
+            Width: =640
+            X: =0
+            Y: =7
+            ZIndex: =7
+
+            DataCardKey198 As label:
+                AutoHeight: =true
+                Color: =RGBA(89, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue198 As label:
+                AutoHeight: =true
+                BorderColor: =RGBA(89, 0, 0, 1)
+                Color: =RGBA(0, 0, 0, 1)
+                DisabledColor: =RGBA(166, 166, 166, 1)
+                DisplayMode: =Parent.DisplayMode
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =21
+                Text: =Parent.Default
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey198.Y + DataCardKey198.Height + 5
+                ZIndex: =2
+

@@ -1,0 +1,144 @@
+{
+  "e2b18d3b-1e89-43aa-a0e8-293ab4c28d95": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1591/1.0.1591.2961/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://sttpln.sharepoint.com/sites/BorangAkreditasiInformatika": {
+        "dataSources": {
+          "Penilaian_Kriteria1": {
+            "tableName": "a5d290b4-11e1-426e-bbc8-f8539b1a40bd"
+          },
+          "Tabel_Daftar_Dosen_Tetap_Mengampu_MataKuliah": {
+            "tableName": "39e3d1ae-546a-4a03-82f1-19f4323ba862"
+          },
+          "Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir": {
+            "tableName": "14207524-eb6b-4aad-8a1a-e95b8d396d82"
+          },
+          "Tabel_Jumlah _Mahasiswa_Baru": {
+            "tableName": "a96ecb25-45e8-4371-9cff-872c49a7d689"
+          },
+          "Tabel_Kegiatan_Mahasiswa": {
+            "tableName": "0ccf2ba0-8bf4-44f1-a1b0-18d8a77f1473"
+          },
+          "Tabel_Kegiatan_Mahasiswa_yang_Tidak_Sesuai_Dengan_Bidang_Infokom": {
+            "tableName": "f8bfb43d-52f9-4af0-87f3-7958cae2d11b"
+          },
+          "Tabel_Kerjasama_Pendidikan": {
+            "tableName": "7b9bf4ff-cc0b-4a46-89d3-a7d928c66783"
+          },
+          "Tabel_Kerjasama_Penelitian": {
+            "tableName": "200e32b5-700f-4a74-bc0d-58d1f0814b0a"
+          },
+          "Tabel_Kerjasama_Pengabdian_Masyarakat": {
+            "tableName": "1bb71b7e-a14e-44ab-9c3a-4f069e49c9ac"
+          },
+          "Tabel_Kesesuaian_Keahlian_DTPS_dengan_MatkulDiajarkan_3TahunTerakhir": {
+            "tableName": "aec2b599-0daf-4851-9892-7162d72f0157"
+          },
+          "Tabel_KualifikasiTPendidikan": {
+            "tableName": "c3021c0e-4083-406d-982c-48c22650f3c9"
+          },
+          "Tabel_Layanan_dan_Kualitas_Layanan_Kepada_Mahasiswa": {
+            "tableName": "5705eb7a-b90c-497d-bd29-3462d482d892"
+          },
+          "Tabel_Peningkatan_Kemampuan_DTPS_Melalui_Program_TugasBelajar_Dalam_Bimbingan_Infokom": {
+            "tableName": "9f257176-f2ff-466d-993f-c1e06d160401"
+          },
+          "Tabel_Profesionalisme_Dosen": {
+            "tableName": "85795eb0-9204-4285-8d3c-6d9353f233dc"
+          },
+          "Tabel_Rata2bebanDTPS": {
+            "tableName": "5ced1017-4857-4e1a-b92b-4ec424969f11"
+          },
+          "Tabel_Upaya_Dilakukan_UPPS_DalamMeningkatkanKualifikasi_dan_KompetensiTenagaKependidikan_3TahunTerakhir": {
+            "tableName": "731ba127-7d79-45ef-b9b6-e2adf0556f5a"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "Tabel_Kerjasama_Pendidikan",
+      "Tabel_Kerjasama_Penelitian",
+      "Tabel_Kerjasama_Pengabdian_Masyarakat",
+      "Tabel_Jumlah _Mahasiswa_Baru",
+      "Tabel_Layanan_dan_Kualitas_Layanan_Kepada_Mahasiswa",
+      "Tabel_Kegiatan_Mahasiswa",
+      "Tabel_Kegiatan_Mahasiswa_yang_Tidak_Sesuai_Dengan_Bidang_Infokom",
+      "Tabel_Daftar_Dosen_Tetap_Mengampu_MataKuliah",
+      "Tabel_Kesesuaian_Keahlian_DTPS_dengan_MatkulDiajarkan_3TahunTerakhir",
+      "Tabel_Profesionalisme_Dosen",
+      "Tabel_Peningkatan_Kemampuan_DTPS_Melalui_Program_TugasBelajar_Dalam_Bimbingan_Infokom",
+      "Tabel_KualifikasiTPendidikan",
+      "Tabel_Upaya_Dilakukan_UPPS_DalamMeningkatkanKualifikasi_dan_KompetensiTenagaKependidikan_3TahunTerakhir",
+      "Tabel_Dosen_Pembimbing_Utama_Tugas_Akhir",
+      "Tabel_Rata2bebanDTPS",
+      "Penilaian_Kriteria1",
+      "db_penilaian_1",
+      "db_apps",
+      "db_penilaian_4",
+      "db_penilaian_3",
+      "db_penilaian_2",
+      "db_user"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "e2b18d3b-1e89-43aa-a0e8-293ab4c28d95"
+  },
+  "fd9a710f-fd94-4584-8d90-39953e89b73e": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1591/1.0.1591.2961/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://sttpln.sharepoint.com/sites/BorangAkreditasiInformatika": {
+        "dataSources": {
+          "db_apps": {
+            "tableName": "804e75fb-e5d0-4a91-9f5b-384d6ffbc8d9"
+          },
+          "db_penilaian_1": {
+            "tableName": "5ab8cf61-b600-4edb-a3f6-f5bd5458c45b"
+          },
+          "db_penilaian_2": {
+            "tableName": "b6217040-0908-44b8-9b9d-60a1fd3f2011"
+          },
+          "db_penilaian_3": {
+            "tableName": "8e147b0b-5d84-4366-a257-6a0cbc7af692"
+          },
+          "db_penilaian_4": {
+            "tableName": "4f9ec7b8-b052-4054-bae7-b1c0442909cc"
+          },
+          "db_user": {
+            "tableName": "5627b5d3-97c1-4306-8478-c407d0d8d1c1"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "db_apps",
+      "db_penilaian_1",
+      "db_penilaian_3",
+      "db_penilaian_4",
+      "db_penilaian_2",
+      "db_user"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "fd9a710f-fd94-4584-8d90-39953e89b73e"
+  }
+}

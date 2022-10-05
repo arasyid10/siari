@@ -1,0 +1,184 @@
+"'ScreenDaftarPenilaian_1-4' As screen.'phoneLayout_FluidGridWithHeaderPageLayout_ver3.0'":
+    Fill: =RGBA(234, 234, 234, 1)
+    LoadingSpinnerColor: =RGBA(164, 38, 44, 1)
+
+    RectQuickActionBar5_8 As rectangle:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Fill: =RGBA(164, 38, 44, 1)
+        Height: =88
+        Width: =Parent.Width
+        ZIndex: =1
+
+    LblAppName5_8 As label:
+        Align: =Align.Center
+        Color: =RGBA(255, 255, 255, 1)
+        DisabledColor: =RGBA(166, 166, 166, 1)
+        Height: =88
+        Size: =27
+        Text: ="PENILAIAN 1-4"
+        Width: =Parent.Width
+        ZIndex: =2
+
+    Canvas1_3 As fluidGrid.fluidGridWithBlankCard:
+        BorderThickness: =0
+        Height: =Parent.Height - Self.Y
+        Width: =Parent.Width
+        Y: =RectQuickActionBar5_8.Y + RectQuickActionBar5_8.Height
+        ZIndex: =3
+
+        DataCard1_11 As dataCard:
+            BorderColor: =RGBA(0, 0, 0, 1)
+            BorderStyle: =BorderStyle.Solid
+            BorderThickness: =0
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =Parent.Height - 100
+            Width: =Parent.Width
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+    "GalleryMenuLKPS_7 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Height: =Parent.Height
+        Items: |-
+            =Table(
+                {
+                    Menu: " PENILAIAN KRITERIA 1",
+                    SubMenu: "Visi, Misi, Tujuan dan Strategi",
+                    TargetScreen: PenilaianKriteria1,
+                    Thumbnail: Tabel_Daftar_Dosen_Tetap_Mengampu_MataKuliah
+                },
+             {      Menu: "PENILAIAN KRITERIA 2",
+                    SubMenu: "Tata Pamong, Tata Kelola, dan Kerjasama-kerjasama",
+                    TargetScreen: PenilaianKriteria2,
+                    Thumbnail: Tabel_Layanan_dan_Kualitas_Layanan_Kepada_Mahasiswa
+                },
+                {
+                    Menu: "PENILAIAN KRITERIA 3",
+                    SubMenu: "Mahasiswa",
+                    TargetScreen: PenilaianKriteria3,
+                    Thumbnail: 'Tabel_Jumlah _Mahasiswa_Baru'
+                },
+                {
+                    Menu: "PENILAIAN KRITERIA 4",
+                    SubMenu: "Mahasiswa",
+                    TargetScreen: PenilaianKriteria4,
+                    Thumbnail: 'Tabel_Jumlah _Mahasiswa_Baru'
+                }
+            )
+        Layout: =Layout.Vertical
+        OnSelect: |-
+            =If(
+                ThisItem.Menu = "LKPS KRITERIA 5 - 6",
+             Launch("https://apps.powerapps.com/play/a2fb32bc-24db-40ff-992b-103849979c3f?tenantId=7b388d18-1900-418c-a5d3-e28d7a9a38e6"),
+                If(
+                    ThisItem.Menu = "LKPS KRITERIA 7 - 9",
+                    Launch("https://apps.powerapps.com/play/fb6f534e-cc8d-4cdf-9e1f-5d160792721d?tenantId=7b388d18-1900-418c-a5d3-e28d7a9a38e6")
+                )
+            )
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Y: =LblAppName5_8.Y+LblAppName5_8.Height
+        ZIndex: =4
+
+        Image1_7 As image:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledFill: =RGBA(244, 244, 244, 1)
+            Height: =128
+            Image: ='IT_PLN-removebg-preview'
+            OnSelect: =Select(Parent)
+            Width: =128
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title2_7 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.Menu
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image1_7.Width - 104
+            X: =Image1_7.X + Image1_7.Width + 24
+            Y: =44
+            ZIndex: =2
+
+        Subtitle2_6 As label:
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =18
+            Text: =ThisItem.SubMenu
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title2_7.Width
+            X: =Title2_7.X
+            Y: =Title2_7.Y + Title2_7.Height + 4
+            ZIndex: =3
+
+        NextArrow2_7 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Color: =RGBA(89, 0, 0, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Navigate(ThisItem.TargetScreen,Fade)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator2_7 As rectangle:
+            BorderColor: =RGBA(89, 0, 0, 1)
+            Fill: =RGBA(89, 0, 0, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    Ico_DaftarLKPS_23 As icon.BackArrow:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Navigate(ScreenDaftarLKPS,Fade)
+        X: =18
+        Y: =1051
+        ZIndex: =5
+
+    Icon1_5 As icon.ChevronRight:
+        BorderColor: =RGBA(89, 0, 0, 1)
+        Color: =RGBA(89, 0, 0, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =39
+        Icon: =Icon.ChevronRight
+        OnSelect: =Navigate(PenilaianKriteria2,Fade)
+        Width: =38
+        X: =586
+        Y: =308
+        ZIndex: =7
+
